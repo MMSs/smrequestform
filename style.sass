@@ -30,24 +30,44 @@ section
 	border: $border
 	overflow: hidden
 
+=input()
+	width: 100%
+	height: 100%
+	background: $input_highlight
+	border: none
+	outline: none
+	font-size: inherit
+
+
 .head
 	> div
 		clear: both
 
 	.label
+		padding: $gutter
 		width: (($total_width - ($gutter * 8)) / 4) - $border_width * 2
 		float: left
-		padding: $gutter
 
 	.field
 		@extend .label
 		background: $input_highlight
 
 		input, input:focus
-			width: 100%
-			height: 20px
-			background: $input_highlight
-			border: none
-			outline: none
-			font-size: inherit
+			+input
 
+.requirements
+	> div
+		clear: both
+
+	.label
+		padding: $gutter
+		width: ($total_width / 4) - $gutter
+		float: left
+
+	.field
+		@extend .label
+		width: ($total_width / 4) * 3 - $gutter
+		background: $input_highlight
+
+		label, select
+			+input
