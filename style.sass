@@ -1,0 +1,53 @@
+$border_width: 1px
+$border: solid $border_width black
+$heading_highlight: grey
+$heading_text_color: white
+$input_highlight: #F4F4F4
+$total_width: 600px
+$vgutter: 10px
+$gutter: 5px
+
+body
+	padding: 0
+	margin: 0
+
+main
+	width: $total_width
+	font-family: Arial
+	margin: $vgutter
+
+h1
+	background: $heading_highlight
+	color: $heading_text_color
+	text-align: center
+	margin: 0
+	padding: $vgutter
+	border: $border
+
+
+section
+	padding-top: $vgutter * 2
+	border: $border
+	overflow: hidden
+
+.head
+	> div
+		clear: both
+
+	.label
+		width: (($total_width - ($gutter * 8)) / 4) - $border_width * 2
+		float: left
+		padding: $gutter
+
+	.field
+		@extend .label
+		background: $input_highlight
+
+		input, input:focus
+			width: 100%
+			height: 20px
+			background: $input_highlight
+			border: none
+			outline: none
+			font-size: inherit
+
