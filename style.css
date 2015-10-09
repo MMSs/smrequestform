@@ -52,7 +52,7 @@ section {
 .requirements .field {
   width: 435px;
   background: #F4F4F4; }
-  .requirements .field label, .requirements .field select, .requirements .field button {
+  .requirements .field label, .requirements .field select {
     width: 100%;
     height: 100%;
     min-height: 30px;
@@ -62,6 +62,16 @@ section {
     font-size: inherit;
     display: block;
     margin-top: 5px; }
+  .requirements .field button {
+    width: 100%;
+    height: 100%;
+    min-height: 30px;
+    background: #F4F4F4;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    display: block;
+    border: solid 1px grey; }
   .requirements .field button:focus {
     border: solid 1px black; }
   .requirements .field button:active {

@@ -77,10 +77,13 @@ section
 		width: ((($total_width - ($gutter * 4)) / 4) * 3)
 		background: $input_highlight
 
-		label, select, button
+		label, select
 			+input
 			margin-top: $vgutter / 2
 
+		button
+			+input
+			border: solid 1px grey
 		button:focus
 			border: $border
 		button:active
