@@ -8,12 +8,22 @@ $cell_height: 30px
 $vgutter: 10px
 $gutter: 5px
 
+=input()
+	width: 100%
+	height: 100%
+	min-height: $cell_height
+	background: $input_highlight
+	border: none
+	outline: none
+	font-size: inherit
+	display: block
+
 body
 	padding: 0
 	margin: 0
 
 main
-	width: $total_width
+	float: left
 	font-family: Arial
 	margin: $vgutter
 
@@ -30,17 +40,6 @@ section
 	padding-top: $vgutter * 2
 	border: $border
 	overflow: hidden
-
-=input()
-	width: 100%
-	height: 100%
-	min-height: $cell_height
-	background: $input_highlight
-	border: none
-	outline: none
-	font-size: inherit
-	display: block
-
 
 .head
 	> div
@@ -88,3 +87,39 @@ section
 			border: $border
 		button:active
 			background: hsl(180, 0%, 90%)
+
+aside
+	display: block
+	float: left
+	margin: $vgutter
+
+	.card
+		border: $border
+		overflow: hidden
+
+		.requirements
+			width: $total_width - $gutter
+			overflow: hidden
+
+			p
+				padding: $gutter
+
+				span
+					font-weight: bold
+
+			.label
+				width: $total_width - ($gutter * 3)
+				padding: $gutter
+				margin: 0
+
+			.field
+				width: $total_width - ($gutter * 3)
+				padding: $gutter
+
+				textarea
+					+input
+					width: 100%
+					height: $cell_height * 3
+					overflow: hidden
+					margin: 0
+					padding: 0

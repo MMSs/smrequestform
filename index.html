@@ -4,82 +4,115 @@
 	<meta charset="UTF-8">
 	<title>Social Media Request Form</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="underscore-min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
 	<main>
 		<header><h1><label>Social Media Request Form</label></h1></header>
 		<section>
-			<div class="head">
-				<div>
-					<div class="label"><label for="requestby">Requested by</label></div>
-					<div class="label"><label for="requestto">Request for</label></div>
-					<div class="label"><label for="date">Date</label></div>
-					<div class="label"><label for="deadline">Deadline</label></div>
-				</div>
-				<div>
-					<div class="field"><input id="requestby" name="requestby" type="text"></div>
-					<div class="field"><input id="requestto" name="requestto" type="text"></div>
-					<div class="field"><input id="date" name="date" type="text"></div>
-					<div class="field"><input id="deadline" name="deadline" type="text"></div>
-				</div>
-			</div>
-			<div class="requirements">
-				<div>
-					<div class="label"><label for="channel">Channel</label></div>
-					<div class="field">
-						<select name="channel" id="channel">
-							<option value="FARSI1">FARSI1</option>
-							<option value="TOLO TV">TOLO TV</option>
-							<option value="Lemar TV">Lemar TV</option>
-							<option value="LANA TV">LANA TV</option>
-							<option value="Arman FM">Arman FM</option>
-							<option value="Arakozia FM">Arakozia FM</option>
-							<option value="AfghanStar">AfghanStar</option>
-							<option value="RAPL">RAPL</option>
-							<option value="Kana">Kana</option>
-							<option value="SuperStar">SuperStar</option>
-							<option value="TOLOnews">TOLOnews</option>
-							<option value="Barbud">Barbud</option>
-							<option value="Isaar">Isaar</option>
-							<option value="AfghanScene">AfghanScene</option>
-							<option value="101 India">101 India</option>
-						</select>
+			<form>
+				<div class="head">
+					<div>
+						<div class="label"><label for="requestby">Requested by</label></div>
+						<div class="label"><label for="requestto">Request for</label></div>
+						<div class="label"><label for="date">Date</label></div>
+						<div class="label"><label for="deadline">Deadline</label></div>
+					</div>
+					<div>
+						<div class="field"><input id="requestby" name="requestby" type="text"></div>
+						<div class="field"><input id="requestto" name="requestto" type="text"></div>
+						<div class="field"><input id="date" name="date" type="text" class="date"></div>
+						<div class="field"><input id="deadline" name="deadline" type="text" class="date"></div>
 					</div>
 				</div>
-				<div>
-					<div class="label"><label for="socialmedia">Social Media</label></div>
-					<div class="field">
-						<label><input type="checkbox" name="facebook" id="facebook" value="Facebook">  Facebook</input></label>
-						<label><input type="checkbox" name="twitter" id="twitter" value="Twitter">  Twitter</input></label>
-						<label><input type="checkbox" name="googleplus" id="googleplus" value="Google +">  Google +</input></label>
-						<label><input type="checkbox" name="youtube" id="youtube" value="Youtube">  Youtube</input></label>
-						<label><input type="checkbox" name="instagram" id="instagram" value="Instagram">  Instagram</input></label>
+				<div class="requirements">
+					<div>
+						<div class="label"><label for="channel">Channel</label></div>
+						<div class="field">
+							<select name="channel" id="channel">
+								<option value="FARSI1">FARSI1</option>
+								<option value="TOLO TV">TOLO TV</option>
+								<option value="Lemar TV">Lemar TV</option>
+								<option value="LANA TV">LANA TV</option>
+								<option value="Arman FM">Arman FM</option>
+								<option value="Arakozia FM">Arakozia FM</option>
+								<option value="AfghanStar">AfghanStar</option>
+								<option value="RAPL">RAPL</option>
+								<option value="Kana">Kana</option>
+								<option value="SuperStar">SuperStar</option>
+								<option value="TOLOnews">TOLOnews</option>
+								<option value="Barbud">Barbud</option>
+								<option value="Isaar">Isaar</option>
+								<option value="AfghanScene">AfghanScene</option>
+								<option value="101 India">101 India</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<div class="label"><label for="socialmedia">Social Media</label></div>
+						<div class="field">
+							<label><input type="checkbox" name="facebook" id="facebook" value="Facebook">  Facebook</input></label>
+							<label><input type="checkbox" name="twitter" id="twitter" value="Twitter">  Twitter</input></label>
+							<label><input type="checkbox" name="googleplus" id="googleplus" value="Google +">  Google +</input></label>
+							<label><input type="checkbox" name="youtube" id="youtube" value="Youtube">  Youtube</input></label>
+							<label><input type="checkbox" name="instagram" id="instagram" value="Instagram">  Instagram</input></label>
+						</div>
+					</div>
+					<div>
+						<div class="label"><label for="imagetype">Image Types</label></div>
+						<div class="field">
+							<label><input type="checkbox" name="image" id="image" value="an image">  Image</input></label>
+							<label><input type="checkbox" name="banner" id="banner" value="a banner">  Banner</input></label>
+							<label><input type="checkbox" name="profile" id="profile" value="a profile picture">  Profile Picture</input></label>
+						</div>
+					</div>
+					<div>
+						<div class="label"><label for="language">Languages</label></div>
+						<div class="field">
+							<label><input type="checkbox" name="english" id="english" value="English">  English</input></label>
+							<label><input type="checkbox" name="farsi" id="farsi" value="Farsi / Dari">  Farsi / Dari</input></label>
+							<label><input type="checkbox" name="pashto" id="pashto" value="Pashto">  Pashto</input></label>
+							<label><input type="checkbox" name="Arabic" id="Arabic" value="Arabic">  Arabic</input></label>
+							<label><input type="checkbox" name="Amharic" id="Amharic" value="Amharic">  Amharic</input></label>
+						</div>
+					</div>
+					<div>
+						<div class="label"></div>
+						<div class="field"><button>Generate Request Cards</button></div>
 					</div>
 				</div>
-				<div>
-					<div class="label"><label for="imagetype">Image Types</label></div>
-					<div class="field">
-						<label><input type="checkbox" name="image" id="image" value="Image">  Image</input></label>
-						<label><input type="checkbox" name="banner" id="banner" value="Banner">  Banner</input></label>
-						<label><input type="checkbox" name="profile" id="profile" value="Profile Image">  Profile Image</input></label>
-					</div>
-				</div>
-				<div>
-					<div class="label"><label for="languages">Languages</label></div>
-					<div class="field">
-						<label><input type="checkbox" name="english" id="english" value="English">  English</input></label>
-						<label><input type="checkbox" name="farsi" id="farsi" value="Farsi / Dari">  Farsi / Dari</input></label>
-						<label><input type="checkbox" name="pashto" id="pashto" value="Pashto">  Pashto</input></label>
-						<label><input type="checkbox" name="Arabic" id="Arabic" value="Arabic">  Arabic</input></label>
-						<label><input type="checkbox" name="Amharic" id="Amharic" value="Amharic">  Amharic</input></label>
-					</div>
-				</div>
-				<div>
-					<div class="label"></div>
-					<div class="field"><button>Generate Request Cards</button></div>
-				</div>
-			</div>
+			</form>
 		</section>
 	</main>
-</body>
-</html>
+
+	<!-- Printable cards -->
+	<aside>
+		<div id="defaultcard">
+			<div class="card">
+				<div class="head">
+					<div>
+						<div class="label"><label for="requestby">Requested by</label></div>
+						<div class="label"><label for="requestto">Request for</label></div>
+						<div class="label"><label for="date">Date</label></div>
+						<div class="label"><label for="deadline">Deadline</label></div>
+					</div>
+					<div>
+						<div class="field"><input type="text" value=""></div>
+						<div class="field"><input type="text" value=""></div>
+						<div class="field"><input type="text" class="date" value=""></div>
+						<div class="field"><input type="text" class="date" value=""></div>
+					</div>
+				</div>
+				<div class="requirements">
+					<p>Request for <span class="imagetype"></span> for <span class="channel"></span> in <span class="language"></span>,
+						using the resolution of <span class="resolution"></span>.</p>
+						<div class="label">Description</div>
+						<div class="field"><textarea onkeyup="adjustTextarea(this)"></textarea></div>
+					</div>
+				</div>
+			</aside>
+		</div>
+	</body>
+	</html>
