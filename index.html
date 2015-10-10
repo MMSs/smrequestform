@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="jquery-2.1.4.min.js"></script>
 	<script src="underscore-min.js"></script>
-	<script src="script.js"></script>
 </head>
 <body>
 	<main>
@@ -53,29 +52,29 @@
 					<div>
 						<div class="label"><label for="socialmedia">Social Media</label></div>
 						<div class="field">
-							<label><input type="checkbox" name="facebook" id="facebook" value="Facebook">  Facebook</input></label>
-							<label><input type="checkbox" name="twitter" id="twitter" value="Twitter">  Twitter</input></label>
-							<label><input type="checkbox" name="googleplus" id="googleplus" value="Google +">  Google +</input></label>
-							<label><input type="checkbox" name="youtube" id="youtube" value="Youtube">  Youtube</input></label>
-							<label><input type="checkbox" name="instagram" id="instagram" value="Instagram">  Instagram</input></label>
+							<label><input type="checkbox" name="socialmedia" value="Facebook">  Facebook</input></label>
+							<label><input type="checkbox" name="socialmedia" value="Twitter">  Twitter</input></label>
+							<label><input type="checkbox" name="socialmedia" value="Google +">  Google +</input></label>
+							<label><input type="checkbox" name="socialmedia" value="Youtube">  Youtube</input></label>
+							<label><input type="checkbox" name="socialmedia" value="Instagram">  Instagram</input></label>
 						</div>
 					</div>
 					<div>
 						<div class="label"><label for="imagetype">Image Types</label></div>
 						<div class="field">
-							<label><input type="checkbox" name="image" id="image" value="an image">  Image</input></label>
-							<label><input type="checkbox" name="banner" id="banner" value="a banner">  Banner</input></label>
-							<label><input type="checkbox" name="profile" id="profile" value="a profile picture">  Profile Picture</input></label>
+							<label><input type="checkbox" name="imagetype" value="an image">  Image</input></label>
+							<label><input type="checkbox" name="imagetype" value="a banner">  Banner</input></label>
+							<label><input type="checkbox" name="imagetype" value="a profile picture">  Profile Picture</input></label>
 						</div>
 					</div>
 					<div>
 						<div class="label"><label for="language">Languages</label></div>
 						<div class="field">
-							<label><input type="checkbox" name="english" id="english" value="English">  English</input></label>
-							<label><input type="checkbox" name="farsi" id="farsi" value="Farsi / Dari">  Farsi / Dari</input></label>
-							<label><input type="checkbox" name="pashto" id="pashto" value="Pashto">  Pashto</input></label>
-							<label><input type="checkbox" name="Arabic" id="Arabic" value="Arabic">  Arabic</input></label>
-							<label><input type="checkbox" name="Amharic" id="Amharic" value="Amharic">  Amharic</input></label>
+							<label><input type="checkbox" name="language" value="English">  English</input></label>
+							<label><input type="checkbox" name="language" value="Farsi / Dari">  Farsi / Dari</input></label>
+							<label><input type="checkbox" name="language" value="Pashto">  Pashto</input></label>
+							<label><input type="checkbox" name="language" value="Arabic">  Arabic</input></label>
+							<label><input type="checkbox" name="language" value="Amharic">  Amharic</input></label>
 						</div>
 					</div>
 					<div>
@@ -89,7 +88,8 @@
 
 	<!-- Printable cards -->
 	<aside>
-		<div id="defaultcard">
+		<a name="cards"></a>
+		<div id="cardtemp" style="display:none">
 			<div class="card">
 				<div class="head">
 					<div>
@@ -99,20 +99,22 @@
 						<div class="label"><label for="deadline">Deadline</label></div>
 					</div>
 					<div>
-						<div class="field"><input type="text" value=""></div>
-						<div class="field"><input type="text" value=""></div>
-						<div class="field"><input type="text" class="date" value=""></div>
-						<div class="field"><input type="text" class="date" value=""></div>
+						<div class="field"><input type="text" value="<%= data.requestedby %>"></div>
+						<div class="field"><input type="text" value="<%= data.requestto %>"></div>
+						<div class="field"><input type="text" class="date" value="<%= data.date %>"></div>
+						<div class="field"><input type="text" class="date" value="<%= data.deadline %>"></div>
 					</div>
 				</div>
 				<div class="requirements">
-					<p>Request for <span class="imagetype"></span> for <span class="channel"></span> in <span class="language"></span>,
-						using the resolution of <span class="resolution"></span>.</p>
+					<p>Request for <span><%= data.imagetype %></span> for <span><%= data.channel %></span> in <span><%= data.language %></span>,
+						using the resolution of <span><%= data.resolution %></span>.</p>
 						<div class="label">Description</div>
 						<div class="field"><textarea onkeyup="adjustTextarea(this)"></textarea></div>
 					</div>
 				</div>
-			</aside>
+			</div>
 		</div>
-	</body>
-	</html>
+	</aside>
+	<script src="script.js"></script>
+</body>
+</html>
