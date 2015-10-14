@@ -35,11 +35,13 @@ h1
 	padding: $vgutter
 	border: $border
 
-
 section
 	padding-top: $vgutter * 2
 	border: $border
 	overflow: hidden
+
+.hidden, .templates
+	display: none
 
 .head
 	> div
@@ -87,6 +89,9 @@ section
 			border: $border
 		button:active
 			background: hsl(180, 0%, 90%)
+		button:disabled
+			border-color: lightgrey
+			color: lightgrey
 
 aside
 	display: block

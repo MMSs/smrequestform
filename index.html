@@ -27,59 +27,13 @@
 					</div>
 				</div>
 				<div class="requirements">
-					<div>
-						<div class="label"><label for="channel">Channel</label></div>
-						<div class="field">
-							<select name="channel" id="channel">
-								<option value="FARSI1">FARSI1</option>
-								<option value="TOLO TV">TOLO TV</option>
-								<option value="Lemar TV">Lemar TV</option>
-								<option value="LANA TV">LANA TV</option>
-								<option value="Arman FM">Arman FM</option>
-								<option value="Arakozia FM">Arakozia FM</option>
-								<option value="AfghanStar">AfghanStar</option>
-								<option value="RAPL">RAPL</option>
-								<option value="Kana">Kana</option>
-								<option value="SuperStar">SuperStar</option>
-								<option value="TOLOnews">TOLOnews</option>
-								<option value="Barbud">Barbud</option>
-								<option value="Isaar">Isaar</option>
-								<option value="AfghanScene">AfghanScene</option>
-								<option value="101 India">101 India</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<div class="label"><label for="socialmedia">Social Media</label></div>
-						<div class="field">
-							<label><input type="checkbox" name="socialmedia" value="Facebook">  Facebook</input></label>
-							<label><input type="checkbox" name="socialmedia" value="Twitter">  Twitter</input></label>
-							<label><input type="checkbox" name="socialmedia" value="Google +">  Google +</input></label>
-							<label><input type="checkbox" name="socialmedia" value="Youtube">  Youtube</input></label>
-							<label><input type="checkbox" name="socialmedia" value="Instagram">  Instagram</input></label>
-						</div>
-					</div>
-					<div>
-						<div class="label"><label for="imagetype">Image Types</label></div>
-						<div class="field">
-							<label><input type="checkbox" name="imagetype" value="an image">  Image</input></label>
-							<label><input type="checkbox" name="imagetype" value="a banner">  Banner</input></label>
-							<label><input type="checkbox" name="imagetype" value="a profile picture">  Profile Picture</input></label>
-						</div>
-					</div>
-					<div>
-						<div class="label"><label for="language">Languages</label></div>
-						<div class="field">
-							<label><input type="checkbox" name="language" value="English">  English</input></label>
-							<label><input type="checkbox" name="language" value="Farsi / Dari">  Farsi / Dari</input></label>
-							<label><input type="checkbox" name="language" value="Pashto">  Pashto</input></label>
-							<label><input type="checkbox" name="language" value="Arabic">  Arabic</input></label>
-							<label><input type="checkbox" name="language" value="Amharic">  Amharic</input></label>
-						</div>
-					</div>
+					<div id="channels" class="hidden"></div>
+					<div id="langs" class="hidden"></div>
+					<div id="socialmedia" class="hidden"></div>
+					<div id="imagetype" class="hidden"></div>
 					<div>
 						<div class="label"></div>
-						<div class="field"><button>Generate Request Cards</button></div>
+						<div class="field"><button id="gencards" disabled>Generate Request Cards</button></div>
 					</div>
 				</div>
 			</form>
@@ -89,7 +43,55 @@
 	<!-- Printable cards -->
 	<aside>
 		<a name="cards"></a>
-		<div id="cardtemp" style="display:none">
+	</aside>
+
+	<!-- + Templates -->
+	<div class="templates">
+		<div id="channels_temp">
+			<div class="label"><label for="channel">Channel</label></div>
+			<div class="field">
+				<select name="channel">
+					<option>Select a channel</option>
+					<%
+					channels.forEach(function (channel) {
+						print('<option value="', channel, '">', channel, '</option>');
+					});
+					%>
+				</select>
+			</div>
+		</div>
+		<div id="langs_temp">
+			<div class="label"><label for="language">Languages</label></div>
+			<div class="field">
+				<%
+				langs.forEach(function (lang) {
+					print('<label><input type="checkbox" name="language" id="', lang[0],'" value="', lang[1], '">  ', lang[1], '</input></label>');
+				});
+				%>
+			</div>
+		</div>
+		<div id="socialmedia_temp">
+			<div class="label"><label for="socialmedia">Social Media</label></div>
+			<div class="field">
+				<%
+				socialmedia.forEach(function (sm) {
+					print('<label><input type="checkbox" name="socialmedia" id="', sm[0],'" value="', sm[1], '">  ', sm[1], '</input></label>');
+				});
+				%>
+			</div>
+		</div>
+		<div id="imagetypes_temp">
+			<div class="label"><label for="imagetype">Image Types</label></div>
+			<div class="field">
+				<%
+				imagetypes.forEach(function (it) {
+					print('<label><input type="checkbox" name="imagetype" id="', it[0], '" value="', it[1], '">  ', it[2], '</input></label>');
+				});
+				%>
+			</div>
+		</div>
+
+		<div id="card_tmp">
 			<div class="card">
 				<div class="head">
 					<div>
@@ -109,12 +111,13 @@
 					<p>Request for <span><%= data.imagetype %></span> for <span><%= data.channel %></span> in <span><%= data.language %></span>,
 						using the resolution of <span><%= data.resolution %></span>.</p>
 						<div class="label">Description</div>
-						<div class="field"><textarea onkeyup="adjustTextarea(this)"></textarea></div>
+						<div class="field"><textarea class="adjheight"></textarea></div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</aside>
+	</div>
+	<!-- - Templates -->
 	<script src="script.js"></script>
 </body>
 </html>

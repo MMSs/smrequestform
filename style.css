@@ -20,6 +20,9 @@ section {
   border: solid 1px black;
   overflow: hidden; }
 
+.hidden, .templates {
+  display: none; }
+
 .head > div {
   overflow: hidden;
   clear: both; }
@@ -76,6 +79,9 @@ section {
     border: solid 1px black; }
   .requirements .field button:active {
     background: #e6e6e6; }
+  .requirements .field button:disabled {
+    border-color: lightgrey;
+    color: lightgrey; }
 
 aside {
   display: block;
