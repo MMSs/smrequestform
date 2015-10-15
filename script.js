@@ -110,7 +110,7 @@
 		});
 		repropagateCheckboxes('imagetypes');
 	}
-	$('.requirements').delegate('input, select', 'change', function() {
+	$(document).delegate('.requirements input, .requirements select', 'change', function() {
 		$('button#gencards').prop('disabled', !(Object.keys(templatesVars).every(function(key) {return templatesVars[key].length})));
 	});
 	function tempCard(cardData) {
@@ -138,7 +138,7 @@
 	});
 
 	var cardsGenerated = false;
-	$('form').submit(function(e) {
+	$(document).delegate('form', 'submit', function(e) {
 		e.preventDefault();
 		if (cardsGenerated) {
 			if (!window.confirm('The currently generated cards will be lost.  Are you sure you want to continue generating new cards?')) {

@@ -120,4 +120,21 @@ aside {
           margin: 0;
           padding: 0; }
 
+@media print {
+  main {
+    display: none; }
+
+  .templates {
+    display: none; }
+
+  aside {
+    display: block;
+    float: none;
+    width: 100%; }
+    aside .card {
+      float: none;
+      width: 600px;
+      margin: 0 auto;
+      page-break-inside: avoid; } }
+
 /*# sourceMappingURL=style.css.map */
