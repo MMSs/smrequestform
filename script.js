@@ -25,7 +25,7 @@
 		var temp = _.template($('#channels_temp').html().replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 		$('#channels').html(temp({channels: channels}));
 		$('#channels').show();
-		$('#channels').change(function() {
+		$('#channels select').change(function() {
 			templatesVars.channel = $('#channels option:selected').val();
 			genSocialmedia(channelsMap.channels[$('#channels option:selected').val()].socialmedia);
 			genLangs(channelsMap.channels[$('#channels option:selected').val()].langs);
@@ -96,7 +96,7 @@
 		});
 		repropagateCheckboxes('imagetypes');
 	}
-	$('.requirements input, .requirements select').change(function() {
+	$('.requirements').delegate('input, select', 'change', function() {
 		console.log('something changed');
 		$('button#gencards').prop('disabled', !(Object.keys(templatesVars).every(function(key) {return templatesVars[key].length})));
 	});
