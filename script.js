@@ -27,12 +27,21 @@
 		$('#channels').show();
 		$('#channels select').change(function() {
 			templatesVars.channel = $('#channels option:selected').val();
-			genSocialmedia(channelsMap.channels[$('#channels option:selected').val()].socialmedia);
-			genLangs(channelsMap.channels[$('#channels option:selected').val()].langs);
-
+			if (templatesVars.channel.length) {
+				genLangs(channelsMap.channels[templatesVars.channel].langs);
+				genSocialmedia(channelsMap.channels[templatesVars.channel].socialmedia);
+			} else {
+				genLangs([]);
+				genSocialmedia([]);
+			}
 		});
 	}
 	function genLangs(langs) {
+		if (langs.length == 0) {
+			$('#langs input').prop('checked', false).trigger('change');
+			$('#langs').hide().html('');
+			return false;
+		}
 		_languages = []
 		langs.forEach(function (lang) {
 			_languages.push([lang, channelsMap.langs[lang]]);
@@ -51,6 +60,11 @@
 		repropagateCheckboxes('langs');
 	}
 	function genSocialmedia(socialmedia) {
+		if (socialmedia.length == 0) {
+			$('#socialmedia input').prop('checked', false).trigger('change');
+			$('#socialmedia').hide().html('');
+			return false;
+		}
 		_socialmedia = [];
 		socialmedia.forEach(function(sm) {
 			_socialmedia.push([sm, channelsMap.socialmedia[sm].name]);
@@ -75,7 +89,7 @@
 	}
 	function genImagetypes(imagetypes) {
 		if (imagetypes.length == 0) {
-			$('#imagetypes input').prop('checked', false).trigger('change');
+			$('#imagetype input').prop('checked', false).trigger('change');
 			$('#imagetype').hide().html('');
 			return false;
 		}
@@ -97,7 +111,6 @@
 		repropagateCheckboxes('imagetypes');
 	}
 	$('.requirements').delegate('input, select', 'change', function() {
-		console.log('something changed');
 		$('button#gencards').prop('disabled', !(Object.keys(templatesVars).every(function(key) {return templatesVars[key].length})));
 	});
 	// - Template generators
