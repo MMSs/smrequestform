@@ -89,7 +89,8 @@ aside {
   margin: 10px; }
   aside .card {
     border: solid 1px black;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-bottom: 10px; }
     aside .card .requirements {
       width: 595px;
       overflow: hidden; }

@@ -143,9 +143,8 @@
 		if (cardsGenerated) {
 			if (!window.confirm('The currently generated cards will be lost.  Are you sure you want to continue generating new cards?')) {
 				return false;
-			} else {
-				tempCards([]);
 			}
+			tempCard([]);
 		}
 
 		// getting form data
@@ -186,7 +185,7 @@
 		cardsData.forEach(function(card) {
 			tempCard(card);
 		});
-
-		// cardsGenerated = true;
+		window.location.href = '#cards';
+		cardsGenerated = true;
 	});
 }) (jQuery);
