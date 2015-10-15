@@ -72,7 +72,7 @@
 
 	"socialmedia" : {
 		"facebook" : {
-			"name" : "Facebook",
+			"title" : "Facebook",
 			"imagetypes" : {
 				"image": "1800x1800",
 				"banner": "1920x711",
@@ -80,7 +80,7 @@
 			}
 		},
 		"twitter" : {
-			"name" : "Twitter",
+			"title" : "Twitter",
 			"imagetypes" : {
 				"image": "1024x512",
 				"banner": "1500x500",
@@ -88,7 +88,7 @@
 			}
 		},
 		"googleplus" : {
-			"name" : "Google +",
+			"title" : "Google +",
 			"imagetypes" : {
 				"image": "",
 				"banner": "2120x1992",
@@ -96,14 +96,14 @@
 			}
 		},
 		"youtube" : {
-			"name" : "Youtube",
+			"title" : "Youtube",
 			"imagetypes" : {
 				"banner": "2120x1193",
 				"profile": "1200x1200"
 			}
 		},
 		"instagram" : {
-			"name" : "Instagram",
+			"title" : "Instagram",
 			"imagetypes" : {
 				"image": "1800x1800",
 				"profile": "1200x1200"

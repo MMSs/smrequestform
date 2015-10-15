@@ -43,6 +43,7 @@
 	<!-- Printable cards -->
 	<aside>
 		<a name="cards"></a>
+		<div id="cards" class="hidden"></div>
 	</aside>
 
 	<!-- + Templates -->
@@ -50,7 +51,7 @@
 		<div id="channels_temp">
 			<div class="label"><label for="channel">Channel</label></div>
 			<div class="field">
-				<select name="channel">
+				<select name="channels">
 					<option value="">Select a channel</option>
 					<%
 					channels.forEach(function (channel) {
@@ -65,7 +66,7 @@
 			<div class="field">
 				<%
 				langs.forEach(function (lang) {
-					print('<label><input type="checkbox" name="language" id="', lang[0],'" value="', lang[1], '">  ', lang[1], '</input></label>');
+					print('<label><input type="checkbox" name="langs" id="', lang[0],'" value="', lang[0], '">  ', lang[1], '</input></label>');
 				});
 				%>
 			</div>
@@ -75,7 +76,7 @@
 			<div class="field">
 				<%
 				socialmedia.forEach(function (sm) {
-					print('<label><input type="checkbox" name="socialmedia" id="', sm[0],'" value="', sm[1], '">  ', sm[1], '</input></label>');
+					print('<label><input type="checkbox" name="socialmedia" id="', sm[0],'" value="', sm[0], '">  ', sm[1], '</input></label>');
 				});
 				%>
 			</div>
@@ -85,13 +86,13 @@
 			<div class="field">
 				<%
 				imagetypes.forEach(function (it) {
-					print('<label><input type="checkbox" name="imagetype" id="', it[0], '" value="', it[1], '">  ', it[2], '</input></label>');
+					print('<label><input type="checkbox" name="imagetypes" id="', it[0], '" value="', it[0], '">  ', it[1], '</input></label>');
 				});
 				%>
 			</div>
 		</div>
 
-		<div id="card_tmp">
+		<div id="card_temp">
 			<div class="card">
 				<div class="head">
 					<div>
@@ -101,14 +102,14 @@
 						<div class="label"><label for="deadline">Deadline</label></div>
 					</div>
 					<div>
-						<div class="field"><input type="text" value="<%= data.requestedby %>"></div>
+						<div class="field"><input type="text" value="<%= data.requestby %>"></div>
 						<div class="field"><input type="text" value="<%= data.requestto %>"></div>
 						<div class="field"><input type="text" class="date" value="<%= data.date %>"></div>
 						<div class="field"><input type="text" class="date" value="<%= data.deadline %>"></div>
 					</div>
 				</div>
 				<div class="requirements">
-					<p>Request for <span><%= data.imagetype %></span> for <span><%= data.channel %></span> in <span><%= data.language %></span>,
+					<p>Request for <span><%= data.imagetype %></span> for <span><%= data.channel %></span> in <span><%= data.lang %></span>,
 						using the resolution of <span><%= data.resolution %></span>.</p>
 						<div class="label">Description</div>
 						<div class="field"><textarea class="adjheight"></textarea></div>
