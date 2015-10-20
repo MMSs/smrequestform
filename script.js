@@ -10,24 +10,23 @@
 	});
 
 	$(document).delegate('textarea.adjheight', 'keyup', function() {
-		defautlHeight = 90;
+		defautlHeight = 60;
 		this.style.height = defautlHeight + 'px';
 		this.style.height = (this.scrollHeight) + 'px';
 	});
 
 	$(document).delegate('.card .head .data', 'click', function() {
 		$(this).hide();
-		$(this).next('input').css('display', 'inline-block').focus().select();
-		$(this).bind('DOMSubtreeModified', function() {
-			if ($(this).html().trim().length == 0) $(this).html('_');
+		$(this).next('input').css('display', 'inline-block').focus().select().keyup(function(e) {
+			if (e.keyCode == 13) $(this).trigger('focusout');
 		});
 	});
 	$(document).delegate('.card .head input', 'focusout', function() {
 		$(this).css('display', 'none');
 		thisObj = $(this);
-		thisObj.prev('.data').html($(this).val()).show();
+		thisObj.prev('.data').html(thisObj.val().trim().length == 0 ? '_' : thisObj.val()).show();
 		$(this).change(function() {
-			thisObj.prev('.data').html(thisObj.val())
+			thisObj.prev('.data').html(thisObj.val().trim().length == 0 ? '_' : thisObj.val());
 		});
 	});
 
@@ -204,7 +203,7 @@
 							'channel': data.channels[i1],
 							'lang': channelsMap.langs[data.langs[i2]],
 							'socialmedia': channelsMap.socialmedia[data.socialmedia[i3]].title,
-							'imagetype': channelsMap.imagetypes[data.imagetypes[i4]].value,
+							'imagetype': channelsMap.imagetypes[data.imagetypes[i4]].title,
 							'resolution': channelsMap.socialmedia[data.socialmedia[i3]].imagetypes[data.imagetypes[i4]]
 						});
 					}

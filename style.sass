@@ -10,7 +10,6 @@ $gutter: 5px
 
 =input()
 	width: 100%
-	height: 100%
 	min-height: $cell_height
 	background: $input_highlight
 	border: none
@@ -34,6 +33,12 @@ h1
 	margin: 0
 	padding: $vgutter
 	border: $border
+
+h2
+	@extend h1
+	border: none
+	border-bottom: border
+	font-size: 16px
 
 section
 	padding-top: $vgutter * 2
@@ -116,10 +121,11 @@ aside
 			input
 				+input
 				width: $total_width / 4
-				height: $cell_height
+				height: $cell_height - 2
+				padding: 0
+				margin: 0
 				font-weight: bold
 				display: none
-
 
 		.requirements
 			width: $total_width - $gutter
@@ -132,18 +138,17 @@ aside
 					font-style: italic
 
 			.label
-				width: $total_width - ($gutter * 3)
-				padding: $gutter
-				margin: 0
+				width: (($total_width - ($gutter * 4)) / 4) - $gutter
+				margin: $gutter 0
 
 			.field
-				width: $total_width - ($gutter * 3)
-				padding: $gutter
+				width: ((($total_width - ($gutter * 4)) / 4) * 3) - $gutter
+				clear: right
 
 				textarea
 					+input
 					width: 100%
-					height: $cell_height * 3
+					height: $cell_height * 2
 					overflow: hidden
 					margin: 0
 					padding: 0
