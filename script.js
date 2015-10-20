@@ -15,6 +15,22 @@
 		this.style.height = (this.scrollHeight) + 'px';
 	});
 
+	$(document).delegate('.card .head .data', 'click', function() {
+		$(this).hide();
+		$(this).next('input').css('display', 'inline-block').focus().select();
+		$(this).bind('DOMSubtreeModified', function() {
+			if ($(this).html().trim().length == 0) $(this).html('_');
+		});
+	});
+	$(document).delegate('.card .head input', 'focusout', function() {
+		$(this).css('display', 'none');
+		thisObj = $(this);
+		thisObj.prev('.data').html($(this).val()).show();
+		$(this).change(function() {
+			thisObj.prev('.data').html(thisObj.val())
+		});
+	});
+
 	// ++++++++++++++++++++++
 	// + Templates generators
 	function repropagateCheckboxes(type) {
@@ -181,10 +197,10 @@
 					for (i4 = 0; i4 < data.imagetypes.length; i4++) {
 						if (!channelsMap.socialmedia[data.socialmedia[i3]].imagetypes.hasOwnProperty(data.imagetypes[i4])) break;
 						cardsData.push({
-							'requestby': data.requestby[0],
-							'requestto': data.requestto[0],
-							'date': data.date[0],
-							'deadline': data.deadline[0],
+							'requestby': $.trim(data.requestby[0]).length == 0 ? '_' : data.requestby[0],
+							'requestto': $.trim(data.requestto[0]).length == 0 ? '_' : data.requestto[0],
+							'date': $.trim(data.date[0]).length == 0 ? '_' : data.date[0],
+							'deadline': $.trim(data.deadline[0]).length == 0 ? '_': data.deadline[0],
 							'channel': data.channels[i1],
 							'lang': channelsMap.langs[data.langs[i2]],
 							'socialmedia': channelsMap.socialmedia[data.socialmedia[i3]].title,
