@@ -40,6 +40,17 @@ section
 	border: $border
 	overflow: hidden
 
+button
+	+input
+	border: solid 1px grey
+button:focus
+	border: $border
+button:active
+	background: hsl(180, 0%, 90%)
+button:disabled
+	border-color: lightgrey
+	color: lightgrey
+
 .hidden, .templates
 	display: none
 
@@ -81,17 +92,6 @@ section
 		label, select
 			+input
 			margin-top: $vgutter / 2
-
-		button
-			+input
-			border: solid 1px grey
-		button:focus
-			border: $border
-		button:active
-			background: hsl(180, 0%, 90%)
-		button:disabled
-			border-color: lightgrey
-			color: lightgrey
 
 aside
 	display: block
@@ -147,3 +147,6 @@ aside
 			width: $total_width
 			margin: $gutter auto
 			page-break-inside: avoid
+
+	button
+		visibility: hidden
