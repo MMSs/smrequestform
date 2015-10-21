@@ -1,5 +1,6 @@
 $border_width: 1px
 $border: solid $border_width black
+$border_field: solid $border_width white
 $heading_highlight: grey
 $heading_text_color: white
 $input_highlight: #F4F4F4
@@ -25,6 +26,7 @@ body
 main
 	float: left
 	margin: $vgutter
+	border: $border
 
 h1
 	background: $heading_highlight
@@ -32,17 +34,14 @@ h1
 	text-align: center
 	margin: 0
 	padding: $vgutter
-	border: $border
+	border-bottom: $border
 
 h2
 	@extend h1
-	border: none
-	border-bottom: border
 	font-size: 16px
 
 section
 	padding-top: $vgutter * 2
-	border: $border
 	overflow: hidden
 
 button
@@ -73,6 +72,7 @@ button:disabled
 	.field
 		@extend .label
 		background: $input_highlight
+		border: $border_field
 
 		input, input:focus
 			+input
@@ -86,7 +86,7 @@ button:disabled
 	.label
 		padding: $gutter
 		width: (($total_width - ($gutter * 8)) / 4)
-		min-height: $cell_height
+		line-height: $cell_height
 		float: left
 
 	.field
@@ -96,7 +96,7 @@ button:disabled
 
 		label, select
 			+input
-			margin-top: $vgutter / 2
+			margin: $gutter 0
 
 aside
 	display: block
@@ -150,7 +150,7 @@ aside
 					width: 100%
 					height: $cell_height * 2
 					overflow: hidden
-					margin: 0
+					margin: $gutter 0
 					padding: 0
 
 @media print
