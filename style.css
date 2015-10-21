@@ -144,6 +144,21 @@ aside {
           overflow: hidden;
           margin: 5px 0;
           padding: 0; }
+    aside .card header {
+      position: relative; }
+      aside .card header .removecard {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 20px;
+        color: white;
+        border: solid 1px white;
+        text-align: center;
+        line-height: 36px;
+        width: 36px;
+        cursor: pointer; }
+      aside .card header .removecard:before {
+        content: "X"; }
 
 @media print {
   body {
@@ -166,6 +181,8 @@ aside {
       width: 600px;
       margin: 5px auto;
       page-break-inside: avoid; }
+      aside .card .removecard {
+        display: none; }
 
   button {
     visibility: hidden; } }

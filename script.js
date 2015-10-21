@@ -9,6 +9,13 @@
 		$('.datepicker').datepicker(datepickerOpts);
 	});
 
+	$(document).delegate('.removecard', 'click', function() {
+		$(this).parents('.card').remove();
+		if ($('#cards .card').length == 0) {
+			tempCard([]);
+		}
+	});
+
 	$(document).delegate('textarea.adjheight', 'keyup', function() {
 		defautlHeight = 60;
 		this.style.height = defautlHeight + 'px';
@@ -165,10 +172,9 @@
 		})
 	});
 
-	var cardsGenerated = false;
 	$(document).delegate('form', 'submit', function(e) {
 		e.preventDefault();
-		if (cardsGenerated) {
+		if ($('#cards .card').length > 0) {
 			if (!window.confirm('The currently generated cards will be lost.  Are you sure you want to continue generating new cards?')) {
 				return false;
 			}
@@ -214,6 +220,5 @@
 			tempCard(card);
 		});
 		window.location.href = '#cards';
-		cardsGenerated = true;
 	});
 }) (jQuery);

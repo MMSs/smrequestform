@@ -153,6 +153,24 @@ aside
 					margin: $gutter 0
 					padding: 0
 
+		header
+			position: relative
+
+			.removecard
+				position: absolute
+				top: 0
+				right: 0
+				font-size: 20px
+				color: white
+				border: $border_field
+				text-align: center
+				line-height: 36px
+				width: 36px
+				cursor: pointer
+			.removecard:before
+				content: "X"
+
+
 @media print
 	body
 		-webkit-print-color-adjust: exact
@@ -175,6 +193,9 @@ aside
 			width: $total_width
 			margin: $gutter auto
 			page-break-inside: avoid
+
+			.removecard
+				display: none
 
 	button
 		visibility: hidden
