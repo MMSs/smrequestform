@@ -1,3 +1,4 @@
+@import url(socicon-font-v26/socicon.css);
 body {
   padding: 0;
   margin: 0;
@@ -159,6 +160,15 @@ aside {
         cursor: pointer; }
       aside .card header .removecard:before {
         content: "X"; }
+      aside .card header .icon-socialmedia {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        line-height: 36px;
+        width: 36px; }
 
 @media print {
   body {

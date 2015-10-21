@@ -208,6 +208,7 @@
 							'deadline': $.trim(data.deadline[0]).length == 0 ? '_': data.deadline[0],
 							'channel': data.channels[i1],
 							'lang': channelsMap.langs[data.langs[i2]],
+							'socialmedia_code': data.socialmedia[i3],
 							'socialmedia': channelsMap.socialmedia[data.socialmedia[i3]].title,
 							'imagetype': channelsMap.imagetypes[data.imagetypes[i4]].title,
 							'resolution': channelsMap.socialmedia[data.socialmedia[i3]].imagetypes[data.imagetypes[i4]]
