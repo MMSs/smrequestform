@@ -196,11 +196,11 @@
 		cardsData = [];
 		for (i1 = 0; i1 < data.channels.length; i1++) {
 			for (i2 = 0; i2 < data.langs.length; i2++) {
-				if (channelsMap.channels[data.channels[i1]].langs.indexOf(data.langs[i2]) == -1) break;
+				if (channelsMap.channels[data.channels[i1]].langs.indexOf(data.langs[i2]) == -1) continue;
 				for (i3 = 0; i3 < data.socialmedia.length; i3++) {
-					if (channelsMap.channels[data.channels[i1]].socialmedia.indexOf(data.socialmedia[i3]) == -1) break;
+					if (channelsMap.channels[data.channels[i1]].socialmedia.indexOf(data.socialmedia[i3]) == -1) continue;
 					for (i4 = 0; i4 < data.imagetypes.length; i4++) {
-						if (!channelsMap.socialmedia[data.socialmedia[i3]].imagetypes.hasOwnProperty(data.imagetypes[i4])) break;
+						if (!channelsMap.socialmedia[data.socialmedia[i3]].imagetypes.hasOwnProperty(data.imagetypes[i4])) continue;
 						cardsData.push({
 							'requestby': $.trim(data.requestby[0]).length == 0 ? '_' : data.requestby[0],
 							'requestto': $.trim(data.requestto[0]).length == 0 ? '_' : data.requestto[0],
