@@ -178,10 +178,9 @@
 	$(document).delegate('form', 'submit', function(e) {
 		e.preventDefault();
 		if ($('#cards .card').length > 0) {
-			if (!window.confirm('The currently generated cards will be lost.  Are you sure you want to continue generating new cards?')) {
+			if (!window.confirm('You have already generated cards, this might duplicate them, do you want to continue?')) {
 				return false;
 			}
-			tempCard([]);
 		}
 
 		// getting form data
