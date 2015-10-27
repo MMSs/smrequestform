@@ -48,7 +48,18 @@
 			eventCategory: 'Cards',
 			eventAction: 'Print'
 		});
-	})
+	});
+	$(document).delegate('#emailcards', 'click', function() {
+		cards = [];
+		$('#cards .card form').each(function() {
+			cards.push(btoa($(this).serialize()));
+		});
+		temp = _.template($('#cardemail_temp').html().replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+		subject = 'Graphic Design Request';
+		body = temp({cards: cards});
+		console.log('email cards', '\n\nsubject: ', subject, '\nbody:', body);
+		window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+	});
 
 	// ++++++++++++++++++++++
 	// + Templates generators
@@ -164,14 +175,14 @@
 	function tempCard(cardData) {
 		if (cardData.length == 0) {
 			$('#cards').hide().html('');
-			$('#printcards').hide();
+			$('#cardsfuncs').hide();
 			return false;
 		}
 		var temp = _.template($('#card_temp').html().replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 		$('#cards').append(temp({data: cardData}));
 		$('#cards').show();
 		$('.datepicker').datepicker(datepickerOpts);
-		$('#printcards').show();
+		$('#cardsfuncs').show();
 
 		ga('send', {
 			hitType: 'event',
@@ -249,7 +260,6 @@
 		cardsData.forEach(function(card) {
 			tempCard(card);
 		});
-		window.location.href = '#cards';
 
 		ga('send', {
 			hitType: 'event',
