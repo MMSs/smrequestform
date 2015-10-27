@@ -12,7 +12,7 @@
 	<script src="script.js"></script>
 </head>
 <body>
-	<main>
+	<main class="hidden">
 		<header><h1><label>Social Media Request Form</label></h1></header>
 		<section>
 			<form>
@@ -122,6 +122,32 @@
 						<div class="label">Resoluation</div><div class="field"><%= data.resolution %><input type="hidden" name="resolution" value="<%= data.resolution %>"></div>
 						<div class="label">Language</div><div class="field"><%= data.lang %><input type="hidden" name="lang" value="<%= data.lang %>"></div>
 						<div class="label">Description</div><div class="field"><textarea name="description" class="adjheight" tabindex="<%= data.index + 1 %>"></textarea><div class="printable_textarea"></div></div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="cardview_temp">
+			<div class="cardview">
+				<form>
+					<header>
+						<h2>Graphic Design Request Card</h1>
+						<div class="icon-socialmedia"><span class="socicon-<%= data.socialmedia_code %>"></span></div>
+					</header>
+					<div class="head">
+						<p>
+							Request from <span class="data"><%= data.requestby %></span>
+							to <span class="data"><%= data.requestto %></span>
+							on <span class="data"><%= data.date %></span>
+							To be delivered by <span class="data"><%= data.deadline %></span>
+						</p>
+					</div>
+					<div class="requirements">
+						<div class="label">Channel</div><div class="field"><%= data.channel %></div>
+						<div class="label">Social Media</div><div class="field"><span class="socicon-<%= data.socialmedia_code %>"></span> <%= data.socialmedia %></div>
+						<div class="label">Image type</div><div class="field"><%= data.imagetype %></div>
+						<div class="label">Resoluation</div><div class="field"><%= data.resolution %></div>
+						<div class="label">Language</div><div class="field"><%= data.lang %></div>
+						<div class="label">Description</div><div class="field"><%= data.description %></div>
 					</div>
 				</form>
 			</div>
