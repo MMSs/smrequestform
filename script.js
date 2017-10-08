@@ -247,7 +247,7 @@
 		}
 
 		// if it wasn't card view request, show the form
-		$('main').removeClass('hidden');
+		$('main').show();
 
 		// load data map
 		$.ajax("map.json", {

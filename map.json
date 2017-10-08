@@ -1,62 +1,26 @@
 {
 	"channels": {
-		"FARSI1" : {
+		"Channel 1" : {
 			"langs" : ["fa", "en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		},
-		"TOLO TV" : {
+		"Channel 2" : {
 			"langs" : ["fa", "ps", "en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		},
-		"Lemar TV" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"LANA TV" : {
+		"Channel 3" : {
 			"langs" : ["ar", "en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		},
-		"Arman FM" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"Arakozia FM" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"AfghanStar" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"RAPL" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"Kana" : {
+		"Channel 4" : {
 			"langs" : ["am", "en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		},
-		"SuperStar" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"TOLOnews" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"Barbud" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"Isaar" : {
-			"langs" : ["fa", "ps", "en"],
-			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
-		},
-		"AfghanScene" : {
+		"Magazine" : {
 			"langs" : ["en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		},
-		"101 India" : {
+		"Channel India" : {
 			"langs" : ["en"],
 			"socialmedia" : ["facebook", "twitter", "google", "youtube", "instagram"]
 		}
