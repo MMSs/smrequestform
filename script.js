@@ -195,12 +195,12 @@
 	$(document).delegate('#printcards', 'click', function() {
 		window.print();
 
-		ga('send', {
-			hitType: 'event',
-			eventCategory: 'Cards',
-			eventAction: 'Print',
-			eventValue: $('#cards .card').length
-		});
+		// ga('send', {
+		// 	hitType: 'event',
+		// 	eventCategory: 'Cards',
+		// 	eventAction: 'Print',
+		// 	eventValue: $('#cards .card').length
+		// });
 	});
 	$(document).delegate('#emailcards', 'click', function() {
 		cards = [];
@@ -217,12 +217,12 @@
 		body = temp({cards: cards});
 		window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-		ga('send', {
-			hitType: 'event',
-			eventCategory: 'Cards',
-			eventAction: 'Email',
-			eventValue: $('#cards .card').length
-		});
+		// ga('send', {
+		// 	hitType: 'event',
+		// 	eventCategory: 'Cards',
+		// 	eventAction: 'Email',
+		// 	eventValue: $('#cards .card').length
+		// });
 	});
 
 	$(document).ready(function () {
@@ -237,11 +237,11 @@
 				});
 				tempCardview(carddata);
 
-				ga('send', {
-					hitType: 'event',
-					eventCategory: 'Cards',
-					eventAction: 'View'
-				});
+				// ga('send', {
+				// 	hitType: 'event',
+				// 	eventCategory: 'Cards',
+				// 	eventAction: 'View'
+				// });
 				return;
 			}
 		}
@@ -267,12 +267,12 @@
 		e.preventDefault();
 		if ($('#cards .card').length > 0) {
 			if (!window.confirm('You have already generated cards, this might duplicate them, do you want to continue?')) {
-				ga('send', {
-					hitType: 'event',
-					eventCategory: 'Cards',
-					eventAction: 'Generate',
-					eventLabel: 'Canceled'
-				});
+				// ga('send', {
+				// 	hitType: 'event',
+				// 	eventCategory: 'Cards',
+				// 	eventAction: 'Generate',
+				// 	eventLabel: 'Canceled'
+				// });
 				return false;
 			}
 		}
@@ -318,13 +318,13 @@
 			tempCard(card);
 		});
 
-		ga('send', {
-			hitType: 'event',
-			eventCategory: 'Cards',
-			eventAction: 'Generate',
-			eventLabel: 'Generated cards',
-			eventValue: cardsData.length
-		});
+		// ga('send', {
+		// 	hitType: 'event',
+		// 	eventCategory: 'Cards',
+		// 	eventAction: 'Generate',
+		// 	eventLabel: 'Generated cards',
+		// 	eventValue: cardsData.length
+		// });
 	});
 	// - events
 	// --------
